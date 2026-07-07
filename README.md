@@ -3,7 +3,7 @@ Personal Storage to Track Everything
 
  
 
-## Costituzione del progetto SecondBrain
+## Costituzione del progetto
 
 ### Premessa
 
@@ -212,3 +212,315 @@ Ogni scelta progettuale deve poter rispondere affermativamente alla seguente dom
 Se la risposta è negativa, la funzione non appartiene al progetto SecondBrain.
 
 
+
+
+
+## Manifesto Architetturale
+
+### 1. Visione
+
+SecondBrain è un sistema personale di gestione della conoscenza progettato per durare nel tempo.
+
+L'architettura separa rigorosamente:
+
+- i documenti originali;
+- la conoscenza strutturata;
+- la logica dell'applicazione.
+
+Ogni componente ha una responsabilità unica e ben definita.
+
+
+
+### 2. Architettura generale
+
+
+SecondBrain/
+
+│
+├── SecondBrain.db
+│
+├── Inbox/
+│
+├── Archivio/
+│
+├── History/
+│
+├── Temp/
+│
+└── Core/
+
+
+
+
+### 3. Componenti
+
+#### 3.1 SecondBrain.db
+
+È il cuore informativo del sistema.
+
+Contiene esclusivamente dati strutturati.
+
+Non contiene documenti.
+
+Comprende tutti i database necessari al funzionamento del sistema:
+
+- Archivio documentale
+- Finanze
+- Persone
+- Luoghi
+- Eventi sanitari
+- Decisioni
+- Manutenzioni
+- Tag
+- Relazioni
+- eventuali moduli futuri
+
+Il database rappresenta l'unica fonte di verità per tutte le informazioni strutturate.
+
+
+
+#### 3.2 Inbox
+
+È il punto di ingresso dei nuovi documenti.
+
+Qualunque file destinato all'archivio deve transitare dalla Inbox.
+
+La presenza di un documento nella Inbox indica che il documento non è ancora stato elaborato.
+
+La Inbox deve essere sempre vuota al termine dell'elaborazione.
+
+
+
+#### 3.3 Archivio
+
+Contiene tutti i documenti originali.
+
+Sono ammessi qualunque formato utile:
+
+- PDF
+- immagini
+- video
+- audio
+- fogli elettronici
+- presentazioni
+- documenti di testo
+- altri file
+
+L'Archivio costituisce la memoria documentale del sistema.
+
+I file non vengono modificati durante la loro permanenza nell'Archivio.
+
+Ogni documento è identificato nel database tramite il proprio percorso.
+
+
+
+#### 3.4 History
+
+Conserva copie storiche del sistema.
+
+Comprende:
+
+- snapshot del database;
+- esportazioni periodiche;
+- eventuali log di migrazione.
+
+La History ha esclusivamente funzione di sicurezza e recupero.
+
+Non viene utilizzata durante il normale funzionamento.
+
+
+
+#### 3.5 Temp
+
+Area temporanea utilizzata dal Core.
+
+Può contenere:
+
+- OCR intermedi;
+- miniature;
+- file temporanei;
+- conversioni.
+
+Il suo contenuto può essere eliminato in qualsiasi momento.
+
+
+
+#### 3.6 Core
+
+È il motore operativo del sistema.
+
+Ha il compito di:
+
+- monitorare la Inbox;
+- elaborare i documenti;
+- gestire OCR;
+- suggerire metadati;
+- aggiornare il database;
+- eseguire sincronizzazioni;
+- creare backup;
+- mantenere la coerenza del sistema.
+
+Il Core rappresenta l'unica componente autorizzata a modificare automaticamente il database.
+
+
+
+### 4. Flussi fondamentali
+
+Esistono solamente due modalità di inserimento delle informazioni.
+
+#### Flusso A – Documento
+
+Nuovo documento
+
+↓
+
+Inbox
+
+↓
+
+Elaborazione
+
+↓
+
+Indicizzazione
+
+↓
+
+Conferma utente
+
+↓
+
+Aggiornamento database
+
+↓
+
+Archivio
+
+
+
+#### Flusso B – Record
+
+Nuovo record
+
+↓
+
+Compilazione
+
+↓
+
+Conferma
+
+↓
+
+Aggiornamento database
+
+↓
+
+Eventuale collegamento a documenti esistenti
+
+I due flussi sono indipendenti.
+
+
+
+### 5. Principio di collegamento
+
+Le informazioni sono collegate mediante:
+
+- tag;
+- collegamenti espliciti.
+
+I tag rappresentano classificazioni semantiche.
+
+I collegamenti rappresentano relazioni tra elementi del sistema.
+
+Un documento può essere collegato contemporaneamente a più record appartenenti a database differenti.
+
+
+
+### 6. Organizzazione fisica
+
+L'organizzazione delle cartelle non rappresenta la struttura logica del sistema.
+
+La struttura logica è definita esclusivamente dal database.
+
+Le cartelle esistono solo per esigenze tecniche.
+
+
+
+### 7. Sincronizzazione
+
+Il sistema opera in modalità offline-first.
+
+Lo smartphone costituisce il dispositivo principale.
+
+Ogni modifica viene automaticamente sincronizzata.
+
+Devono essere sincronizzati:
+
+- il database;
+- l'Archivio;
+- la History.
+
+Il cloud rappresenta esclusivamente un mezzo di sincronizzazione e protezione.
+
+La copia locale costituisce sempre il riferimento operativo.
+
+
+
+### 8. Integrità
+
+Il sistema deve poter verificare automaticamente:
+
+- documenti orfani;
+- collegamenti non validi;
+- riferimenti mancanti;
+- duplicati;
+- errori di sincronizzazione.
+
+L'integrità del database è una responsabilità del Core.
+
+
+
+### 9. Estendibilità
+
+Ogni nuovo modulo deve poter essere aggiunto senza modificare l'architettura esistente.
+
+L'aggiunta di un database non deve richiedere modifiche ai database già presenti.
+
+Il sistema deve crescere in maniera modulare.
+
+
+
+### 10. Interrogazione
+
+Il sistema non è progettato per mostrare dati.
+
+È progettato per rispondere a domande.
+
+Ogni funzione del software deve contribuire a:
+
+- trovare informazioni;
+- ricostruire eventi;
+- collegare conoscenze;
+- effettuare analisi;
+- supportare decisioni.
+
+
+
+### 11. Responsabilità dell'utente
+
+L'utente decide il significato delle informazioni.
+
+Il sistema assiste l'utente ma non sostituisce il suo giudizio.
+
+Ogni suggerimento automatico deve poter essere modificato o rifiutato.
+
+
+
+### 12. Evoluzione
+
+Le tecnologie utilizzate possono cambiare.
+
+L'architettura concettuale deve rimanere stabile.
+
+La longevità del progetto dipende dalla stabilità del modello, non dagli strumenti utilizzati.
