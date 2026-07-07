@@ -237,16 +237,27 @@ Ogni componente ha una responsabilità unica e ben definita.
 SecondBrain/
 
 │
+
 ├── SecondBrain.db
+
 │
+
 ├── Inbox/
+
 │
+
 ├── Archivio/
+
 │
+
 ├── History/
+
 │
+
 ├── Temp/
+
 │
+
 └── Core/
 
 
