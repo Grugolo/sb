@@ -3,9 +3,9 @@ Personal Storage to Track Everything
 
  
 
-# Costituzione del progetto SecondBrain
+## Costituzione del progetto SecondBrain
 
-## Premessa
+### Premessa
 
 SecondBrain è un sistema personale di gestione della conoscenza e della memoria digitale.
 
@@ -14,9 +14,9 @@ Il suo scopo non è semplicemente archiviare documenti, ma permettere di ricostr
 Il sistema è progettato per essere utilizzabile quotidianamente, crescere negli anni e mantenere il pieno controllo dei dati senza dipendere da servizi o piattaforme proprietarie.
 
 
----
 
-Articolo 1 – Proprietà dei dati
+
+### Articolo 1 – Proprietà dei dati
 
 Tutti i dati appartengono all'utente.
 
@@ -25,9 +25,9 @@ L'utente deve poter accedere in qualsiasi momento ai propri documenti e ai propr
 I dati devono essere memorizzati in formati aperti, documentati e facilmente esportabili.
 
 
----
 
-Articolo 2 – Una sola fonte di verità
+
+### Articolo 2 – Una sola fonte di verità
 
 Ogni informazione deve esistere una sola volta.
 
@@ -38,9 +38,9 @@ Ogni elemento del sistema ha un solo luogo in cui viene memorizzato.
 Le relazioni collegano i dati senza copiarli.
 
 
----
 
-Articolo 3 – Separazione tra documenti e conoscenza
+
+### Articolo 3 – Separazione tra documenti e conoscenza
 
 I documenti rappresentano prove documentali.
 
@@ -53,9 +53,9 @@ I database non sostituiscono i documenti.
 Quando necessario, i due vengono collegati tramite riferimenti espliciti.
 
 
----
 
-Articolo 4 – Centralità degli eventi
+
+### Articolo 4 – Centralità degli eventi
 
 Il sistema descrive principalmente eventi.
 
@@ -77,9 +77,9 @@ altri eventi futuri.
 Oggetti, persone e luoghi costituiscono il contesto degli eventi.
 
 
----
 
-Articolo 5 – Organizzazione tramite tag e collegamenti
+
+### Articolo 5 – Organizzazione tramite tag e collegamenti
 
 I tag descrivono il significato delle informazioni.
 
@@ -90,18 +90,18 @@ Le cartelle fisiche non rappresentano categorie logiche.
 L'organizzazione logica è costruita esclusivamente da database, tag e collegamenti.
 
 
----
 
-Articolo 6 – Offline first
+
+### Articolo 6 - Offline first
 
 Il sistema deve funzionare integralmente senza connessione Internet.
 
 La connessione è utilizzata esclusivamente per sincronizzazione, backup e aggiornamenti.
 
 
----
 
-Articolo 7 – Sincronizzazione trasparente
+
+### Articolo 7 – Sincronizzazione trasparente
 
 La sincronizzazione deve essere completamente automatica.
 
@@ -112,9 +112,9 @@ Lo smartphone rappresenta il dispositivo principale.
 Il PC mantiene una copia completa e aggiornata del sistema.
 
 
----
 
-Articolo 8 – Conservazione nel tempo
+
+### Articolo 8 – Conservazione nel tempo
 
 Il sistema deve poter essere utilizzato per decenni.
 
@@ -130,9 +130,9 @@ compatibilità futura.
 I dati devono rimanere leggibili anche senza il software originale.
 
 
----
 
-Articolo 9 – Interfaccia orientata alle domande
+
+### Articolo 9 – Interfaccia orientata alle domande
 
 L'obiettivo dell'interfaccia non è mostrare tabelle o file.
 
@@ -156,9 +156,9 @@ Quali eventi sono collegati?
 Ogni nuova funzione dovrà contribuire a rispondere meglio a domande reali.
 
 
----
 
-Articolo 10 – Inserimento delle informazioni
+
+### Articolo 10 – Inserimento delle informazioni
 
 Le informazioni possono entrare nel sistema attraverso due percorsi indipendenti:
 
@@ -172,9 +172,9 @@ Le informazioni possono entrare nel sistema attraverso due percorsi indipendenti
 Entrambi i percorsi possono generare collegamenti reciproci, ma nessuno dei due dipende obbligatoriamente dall'altro.
 
 
----
 
-Articolo 11 – Automazione assistita
+
+### Articolo 11 – Automazione assistita
 
 L'automazione deve ridurre il lavoro dell'utente, non sostituirne il giudizio.
 
@@ -192,18 +192,18 @@ riconoscere persone, luoghi e date.
 La conferma finale spetta sempre all'utente.
 
 
----
 
-Articolo 12 – Evoluzione del sistema
+
+### Articolo 12 – Evoluzione del sistema
 
 Nuovi database, nuovi moduli e nuove funzionalità possono essere aggiunti senza modificare la struttura fondamentale del progetto.
 
 L'architettura deve rimanere stabile anche durante l'evoluzione del software.
 
 
----
 
-Articolo 13 – Principio guida
+
+### Articolo 13 – Principio guida
 
 Ogni scelta progettuale deve poter rispondere affermativamente alla seguente domanda:
 
