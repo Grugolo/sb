@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SecondBrain</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Icona di base, in produzione andrebbero aggiunte le icone Apple Touch -->
+    <meta name="theme-color" content="#1e1e1e">
+</head>
+<body>
+    <header>
+        <h1>SecondBrain</h1>
+    </header>
+
+    <main id="app-content">
+        <!-- INBOX: Flusso A & B -->
+        <section id="view-inbox" class="view active">
+            <h2>Inbox (Nuovo Inserimento)</h2>
+            <div class="card">
+                <h3>Flusso A - Documento</h3>
+                <input type="file" id="doc-input">
+                <input type="text" id="doc-tags" placeholder="Tag (es. bolletta, casa)">
+                <button id="btn-save-doc">Archivia Documento</button>
+            </div>
+            
+            <div class="card">
+                <h3>Flusso B - Nuovo Evento/Record</h3>
+                <input type="text" id="record-title" placeholder="Cosa è successo? (Es. Pagamento affitto)">
+                <input type="date" id="record-date">
+                <textarea id="record-desc" placeholder="Dettagli..."></textarea>
+                <button id="btn-save-record">Salva Conoscenza</button>
+            </div>
+        </section>
+
+        <!-- ARCHIVIO: Solo documenti originali -->
+        <section id="view-archive" class="view">
+            <h2>Archivio Documentale</h2>
+            <div id="archive-list" class="list-container"></div>
+        </section>
+
+        <!-- KNOWLEDGE (Core DB): Eventi strutturati -->
+        <section id="view-knowledge" class="view">
+            <h2>Conoscenza & Eventi</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Rispondi a: Cosa? Quando? Chi?">
+            </div>
+            <div id="knowledge-list" class="list-container"></div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <button class="nav-btn active" data-target="view-inbox">Inbox</button>
+        <button class="nav-btn" data-target="view-archive">Archivio</button>
+        <button class="nav-btn" data-target="view-knowledge">Conoscenza</button>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
